@@ -45,7 +45,7 @@ Download it [here](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/). 
     In Settings > Storage > Optical Drive: select the amd64 ISO image<br /><br />
 
 4. **Installing Debian**<br /><br />
-I followed this [tutorial](https://github.com/gemartin99/Born2beroot-Tutorial) to setup manually encrypted partitions using LVM as it is required in the bonus part of the project.<br />
+I followed this [tutorial]([https://github.com/gemartin99/Born2beroot-Tutorial](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#8--bonus-%EF%B8%8F)) to setup manually encrypted partitions using LVM as it is required in the bonus part of the project.<br />
     * Hostname: naharumi42
     * Username: naharumi
 
