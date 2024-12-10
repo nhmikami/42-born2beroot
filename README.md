@@ -178,6 +178,12 @@ SSH (Secure Shell) is a cryptographic network protocol used for securely accessi
       sudo service ssh status
       ```
       <img src="img/ssh-status.png"><br />
+
+    * To check the SSH connection, in the terminal:
+      ```bash
+      ssh <username>@<ip> -p 4242
+      ssh naharumi@10.12.200.252 -p 4242
+      ```
     <br />
 
 9. **UFW Firewall**<br /><br />
@@ -217,6 +223,7 @@ It helps secure a system by controlling incoming and outgoing network traffic ba
       ```bash
       sudo chage -M 30 -m 2 -W 7 naharumi
       ```
+      <img src="img/chage-passwd.png"><br />
 
     * Check passowrd status for a \<user\>
       ```bash
@@ -265,7 +272,8 @@ Develop a script in bash that will display the following information in all term
     * The IPv4 address of your server and its MAC (Media Access Control) address
     * The number of commands executed with the sudo program
     <br />
-    My script can be viewed in the file [monitoring.sh](monitoring.sh) <br /><br />
+    My script can be viewed in the file [monitoring.sh](monitoring.sh).
+    <br /><br />
 
 12. **Cron setup** :alarm_clock:<br />
     * Configure crontab: cron is a time-based job scheduling system in Unix-like operating systems that allows users to run scripts or commands automatically at specified intervals or times
