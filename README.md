@@ -218,7 +218,7 @@ It helps secure a system by controlling incoming and outgoing network traffic ba
       - The user has to receive a warning message 7 days before their password expires
 
     * Configure `/etc/login.defs`
-      <br /><img src="img/chage-passwd.png"><br />
+      <br /><img src="img/login-defs.png"><br />
       Note that this will apply only for future created users. To change to current ones you will need to do it one by one:
       ```bash
       sudo chage -M 30 -m 2 -W 7 naharumi
@@ -388,7 +388,7 @@ PHP (Hypertext Preprocessor) is a popular open-source scripting language widely 
       cd /var/www/html
       ```
 
-    * Configure the `wp-config.php` file and update database-name, username and password with the values set when the database was created
+    * Configure the `wp-config.php` file and update database-name, username and password with the values set when the database was created<br />
       <img src="img/wp-config.png"><br />
       
     * Enable modules in Lighttpd to improve the performance of web applications on the server
