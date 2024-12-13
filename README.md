@@ -53,7 +53,7 @@ It was already installed in my computer, but you can download it [here](https://
 
 2. **Download Debian** :cd:<br /><br />
 Debian is a free and open-source operating system (OS) based on the Linux kernel, known for its stability, security, and extensive package repository. Debian serves as the foundation for many other popular Linux distributions, such as Ubuntu.<br /><br />
-Download it [here](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/). I used the amd64 ISO image.<br /><br />
+Download it [here](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/) - I used the amd64 ISO image.<br /><br />
 
 3. **Setting up the virtual machine** :gear:<br />
     - Name and Operational System:
@@ -148,7 +148,6 @@ In addition to the root user, a user with my login as username must be present a
       ```bash
       whoiam
       ```
-
       <br /><img src="img/user-group.png"><br />
     <br />
 
@@ -179,11 +178,14 @@ SSH (Secure Shell) is a cryptographic network protocol used for securely accessi
       ```
       <img src="img/ssh-status.png"><br />
 
-    * To check the SSH connection, in the terminal:
+    * To check the SSH connection to the virtual machine, use the command in the terminal:
       ```bash
       ssh <username>@<ip> -p 4242
-      ssh naharumi@10.12.200.252 -p 4242
       ```
+      <img src="img/ssh-user.png"><br />
+  
+      Note that when trying to connect as root, permission should be denied<br />
+      <img src="img/ssh-root.png"><br />
     <br />
 
 9. **UFW Firewall**<br /><br />
@@ -209,6 +211,7 @@ It helps secure a system by controlling incoming and outgoing network traffic ba
       ```bash
       sudo ufw status
       ```
+      <img src="img/ufw.png"><br />
     <br />
 
 10. **Strong password policy** :closed_lock_with_key:<br />
@@ -225,7 +228,7 @@ It helps secure a system by controlling incoming and outgoing network traffic ba
       ```
       <img src="img/chage-passwd.png"><br />
 
-    * Check passowrd status for a \<user\>
+    * Check password status for a \<user\>
       ```bash
       chage -l naharumi
       ```
@@ -254,7 +257,6 @@ It helps secure a system by controlling incoming and outgoing network traffic ba
        difok=7           // minimum 7 characters different from the last password
        enforce_for_root  // add the rule to root user too
        ```
-
      <br />
     
 11. **Monitoring script**<br /><br />
@@ -270,8 +272,7 @@ Develop a script in bash that will display the following information in all term
     * The number of active connections
     * The number of users using the server
     * The IPv4 address of your server and its MAC (Media Access Control) address
-    * The number of commands executed with the sudo program
-    <br />
+    * The number of commands executed with the sudo program <br /><br />
     My script can be viewed in the file [monitoring.sh](monitoring.sh).
     <br /><br />
 
@@ -339,7 +340,6 @@ WordPress is a free and open-source content management system (CMS) that enables
       sudo rm -rf /var/www/html/wordpress
       sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
       ```
-
     <br />
 
 13. **MariaDB**<br /><br />
@@ -351,15 +351,15 @@ MariaDB is an open-source relational database management system (RDBMS) created 
       ```
 
     * Run a script to restrict access to the server and remove unused accounts
+      ```bash
+      sudo mysql_secure_installation
+      ```
       - Switch to unix_socket authentication? No
       - Change the root password? No
       - Remove anonymous users? Yes
       - Disallow root login remotely? Yes
       - Remove test database and access to it? Yes
       - Reload privilege tables now? Yes
-      ```bash
-      sudo mysql_secure_installation
-      ```
 
     * Access MariaDB
       ```bash
@@ -369,7 +369,6 @@ MariaDB is an open-source relational database management system (RDBMS) created 
           GRANT ALL ON <database-name>.* TO '<username>'@'localhost' IDENTIFIED BY '<password>' WITH GRANT OPTION;
           FLUSH PRIVILEGES;
           exit
-    
     <br />
     
 14. **PHP**<br /><br />
@@ -397,7 +396,6 @@ PHP (Hypertext Preprocessor) is a popular open-source scripting language widely 
       sudo lighty-enable-mod fastcgi-php
       sudo service lighttpd force-reload
       ```
-    
     <br />
 
 16. **LiteSpeed**<br /><br />
