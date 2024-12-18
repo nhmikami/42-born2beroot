@@ -297,6 +297,7 @@ Develop a script in bash that will display the following information in all term
     
     * To stop cron: `sudo /etc/init.d/cron stop`
     * To start cron: `sudo /etc/init.d/cron start`
+    * To disable cron after reboot: `sudo systemctl disable cron`
     <br />
     
 11. **Lighttpd**<br /><br />
